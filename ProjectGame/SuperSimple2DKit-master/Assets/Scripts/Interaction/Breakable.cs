@@ -27,7 +27,7 @@ public class Breakable : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    public void GetHurt(int hitPower)
+    /* public void GetHurt(int hitPower)
     {
         //If breakable object health is above zero, it's not recovering from a recent hit, get hit!
         if (health > 0 && !recoveryCounter.recovering)
@@ -58,7 +58,7 @@ public class Breakable : MonoBehaviour
                 }
             }
         }
-    }
+    } */
 
     public void Die()
     {
