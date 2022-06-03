@@ -200,6 +200,9 @@ public class PlatformerPlayer : PhysicsObject
             animator.SetFloat("velocityY", 0f);
             GetComponent<PhysicsObject>().targetVelocity = Vector2.zero;
         }
+        else{
+            walkSpeed = 0;
+        }
 
         frozen = freeze;
         shooting = false;

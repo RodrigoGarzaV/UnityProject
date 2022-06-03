@@ -337,6 +337,16 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 108568438}
+    - target: {fileID: 114330403339141386, guid: ffc9cd11fa4bd42479840f0e559bfc58,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 114330403339141386, guid: ffc9cd11fa4bd42479840f0e559bfc58,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 224908452087460466, guid: ffc9cd11fa4bd42479840f0e559bfc58,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1028,6 +1038,11 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 105345608}
+    - target: {fileID: 7113145124468738143, guid: b022250573709434c9737ce47e1017e3,
+        type: 3}
+      propertyPath: nextScene
+      value: VirtualWorld
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b022250573709434c9737ce47e1017e3, type: 3}
 --- !u!1 &958189192 stripped
@@ -1688,6 +1703,24 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &1251758868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1490816698961836, guid: 62be43741e11e064aa2e25ec61543b73,
+    type: 3}
+  m_PrefabInstance: {fileID: 2028507230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1251758873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251758868}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a711e1720482e9f48b5e217af8ace444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1291364943
 GameObject:
   m_ObjectHideFlags: 0
@@ -3522,12 +3555,12 @@ PrefabInstance:
     - target: {fileID: 114803962774154224, guid: 62be43741e11e064aa2e25ec61543b73,
         type: 3}
       propertyPath: nextScene
-      value: VirtualWorld
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114803962774154224, guid: 62be43741e11e064aa2e25ec61543b73,
         type: 3}
       propertyPath: dialogueStringA
-      value: ComputerText
+      value: DemoText
       objectReference: {fileID: 0}
     - target: {fileID: 114803962774154224, guid: 62be43741e11e064aa2e25ec61543b73,
         type: 3}

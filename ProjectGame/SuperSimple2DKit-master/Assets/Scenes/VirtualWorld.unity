@@ -1079,6 +1079,11 @@ PrefabInstance:
       propertyPath: particleSystem
       value: 
       objectReference: {fileID: 382388700}
+    - target: {fileID: 7113145124468738143, guid: b022250573709434c9737ce47e1017e3,
+        type: 3}
+      propertyPath: nextScene
+      value: ClickandDrag
+      objectReference: {fileID: 0}
     - target: {fileID: 7113145125000646054, guid: b022250573709434c9737ce47e1017e3,
         type: 3}
       propertyPath: m_Color.b
@@ -1804,11 +1809,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4569125025086690, guid: 927e473a2ba484d75b382fc1faaf0eeb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -57.0498
+      value: -55.862408
       objectReference: {fileID: 0}
     - target: {fileID: 4569125025086690, guid: 927e473a2ba484d75b382fc1faaf0eeb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5380995
+      value: 1.5585177
       objectReference: {fileID: 0}
     - target: {fileID: 4569125025086690, guid: 927e473a2ba484d75b382fc1faaf0eeb, type: 3}
       propertyPath: m_LocalPosition.z

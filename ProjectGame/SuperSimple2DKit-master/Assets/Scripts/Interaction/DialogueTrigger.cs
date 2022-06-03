@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*Triggers a dialogue conversation, passing unique commands and information to the dialogue box and inventory system for fetch quests, etc.*/
 
@@ -19,7 +20,6 @@ public class DialogueTrigger : MonoBehaviour
     
 
 
-
     [Header ("Dialogue")]
     [SerializeField] private string characterName; //The character's name shown in the dialogue UI
     [SerializeField] private string dialogueStringA; //The dialogue string that occurs before the fetch quest
@@ -30,10 +30,26 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private AudioClip[] audioChoices; //The audio lines that occur when selecting an audio choice
 
 
+    [Header ("Presentacion")]
+    private Scene Scene1;
+    private Scene Scene2;
+    private Scene currentScene;
+    
+
+
     //  GETAXIS(SUBMIT) = TECLA E. Se cambia en Edit > Project Settings > Input Manager > Axes
 
 
-// col.gameObject == player.gameObject
+    // col.gameObject == player.gameObject
+
+
+    void Start(){
+
+        Scene1 = SceneManager.GetSceneByName("Juego");
+        Scene2 = SceneManager.GetSceneByName("VirtualWorld");
+        currentScene = SceneManager.GetActiveScene();
+
+    }
     
     void OnTriggerStay2D(Collider2D col)
     {
@@ -48,7 +64,13 @@ public class DialogueTrigger : MonoBehaviour
             {
                 // Se desactiva icon
                 iconAnimator.SetBool("active", false);
-                GameManager.Instance.dialogueBoxController.Appear(dialogueStringA, characterName, this, sceneChange, nextScene, repeat);
+
+                // funcion de presentacion lol
+                if (currentScene == Scene1){
+                SceneManager.LoadScene("VirtualWorld");
+                }
+
+                GameManager.Instance.dialogueBoxController.Appear(dialogueStringA, characterName, this, sceneChange, repeat);
                 // Se desactiva la interaccion (?)
                 sleeping = true;
             }

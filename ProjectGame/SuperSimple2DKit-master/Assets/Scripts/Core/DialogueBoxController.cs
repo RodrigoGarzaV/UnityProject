@@ -37,12 +37,24 @@ public class DialogueBoxController : MonoBehaviour
     private bool typing = true;
     private bool sceneChange;
     private bool dialogueNextScene;
-    private string nextScene;
+    public string nextScene;
+    private Scene Scene1;
+    private Scene Scene2;
+    private Scene currentScene;
+
+    void Start(){
+
+        Scene1 = SceneManager.GetSceneByName("Juego");
+        Scene2 = SceneManager.GetSceneByName("VirtualWorld");
+        currentScene = SceneManager.GetActiveScene();
+
+    }
 
 
     // Update is called once per frame
     void Update()
     {
+        
         if (activated)
         {
             //Submit
@@ -109,11 +121,10 @@ public class DialogueBoxController : MonoBehaviour
     }
 
     // Llama el dialogo inicial
-    public void Appear(string fName, string characterName, DialogueTrigger dTrigger, bool sChange, string nScene, bool r)
+    public void Appear(string fName, string characterName, DialogueTrigger dTrigger, bool sChange, bool r)
     {
         repeat = r;
         sceneChange = sChange;
-        nextScene = nScene;
         dialogueTrigger = dTrigger;
         choice1Mesh.text = "";
         choice2Mesh.text = "";
@@ -171,7 +182,14 @@ public class DialogueBoxController : MonoBehaviour
 
         if (sceneChange && dialogueNextScene)
         {
-            SceneManager.LoadScene("ClickandDrag");
+
+            if (currentScene == Scene1){
+                SceneManager.LoadScene("VirtualWorld");
+            }
+            else{
+                SceneManager.LoadScene("ClickandDrag");
+            }
+            
         }
 
 

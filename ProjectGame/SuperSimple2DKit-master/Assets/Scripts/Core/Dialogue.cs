@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class Dialogue : MonoBehaviour
 {
-
     public Dictionary<string, string[]> dialogue = new Dictionary<string, string[]>();
 
     void Start()
@@ -73,7 +72,7 @@ public class Dialogue : MonoBehaviour
         });
 
         dialogue.Add("BugText", new string[] {
-            "There's a bug in the system",
+            "There's a bug in the system.",
             "Attempt to fix?",
             "Loading..."
         });
@@ -88,24 +87,33 @@ public class Dialogue : MonoBehaviour
             "Yes"
         });
 
-        dialogue.Add("ComputerText", new string[] {
+        dialogue.Add("CompText", new string[] {
             "Los jugadores necesitan tu ayuda.",
             "Tendras que entrar al sistema y eliminar todos los bugs.",
             "Entrar al mundo virtual?",
             "Cargando..."
         });
 
-        dialogue.Add("ComputerTextChoice1", new string[] {
+        dialogue.Add("CompTextChoice1", new string[] {
             "",
             "",
-            "Luego"
+            "Luego."
         });
 
-        dialogue.Add("ComputerTextChoice2", new string[] {
+        dialogue.Add("CompTextChoice2", new string[] {
             "",
             "",
-            "Si"
+            "Si."
         });
+
+        dialogue.Add("DemoText", new string[] {
+            "..."
+        });
+
+
+
+
+
 
 
 

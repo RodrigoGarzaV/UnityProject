@@ -22,14 +22,18 @@ public class DragController : MonoBehaviour
         
     }
 
+    public void BackToGame()
+    {
+        SceneManager.LoadScene("VirtualWorld");
+        // verificar que los tags de las respuestas en el click and drag sean correctas
+    }
 
     public void VerifyAnswers()
     {
-        if (Vector3.Distance(answers.transform.position, answerSlots.transform.position) < 10)
+        if (Vector3.Distance(answers.transform.position, answerSlots.transform.position) < 20)
         {
             Result.enabled = true;
         }
-        
         // verificar que los tags de las respuestas en el click and drag sean correctas
     }
 
