@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-
     [Header ("References")]
     [SerializeField] private GameObject finishTalkingActivateObject; //After completing a conversation, an object can activate. 
     [SerializeField] private Animator iconAnimator; //The E icon animator
@@ -17,13 +16,16 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private bool repeat; //Set to true if the player should be able to talk again and again to the NPC. 
     [SerializeField] private bool sleeping;
     [SerializeField] private bool sceneChange;
+    
+
 
 
     [Header ("Dialogue")]
     [SerializeField] private string characterName; //The character's name shown in the dialogue UI
     [SerializeField] private string dialogueStringA; //The dialogue string that occurs before the fetch quest
     [SerializeField] private string dialogueStringB; //The dialogue string that occurs after fetch quest
-    [SerializeField] private AudioClip[] audioLinesA; //The audio lines that occurs before the fetch quest
+    [SerializeField] private string nextScene;
+    [SerializeField] private AudioClip[] audioLinesA; //The audio lines that occurs before the fetch quest    
     [SerializeField] private AudioClip[] audioLinesB; //The audio lines that occur after the fetch quest
     [SerializeField] private AudioClip[] audioChoices; //The audio lines that occur when selecting an audio choice
 
@@ -31,10 +33,13 @@ public class DialogueTrigger : MonoBehaviour
     //  GETAXIS(SUBMIT) = TECLA E. Se cambia en Edit > Project Settings > Input Manager > Axes
 
 
+// col.gameObject == player.gameObject
+    
     void OnTriggerStay2D(Collider2D col)
     {
+
         // Si player esta cerca
-        if (col.gameObject == PlatformerPlayer.Instance.gameObject && !sleeping && !completed && PlatformerPlayer.Instance.grounded)
+        if ( (col.gameObject == PlatformerPlayer.Instance.gameObject && !sleeping && !completed && PlatformerPlayer.Instance.grounded ) || (col.tag == "Player") )
         {
             // Icon de interaccion se despliega
             iconAnimator.SetBool("active", true);
@@ -43,7 +48,7 @@ public class DialogueTrigger : MonoBehaviour
             {
                 // Se desactiva icon
                 iconAnimator.SetBool("active", false);
-                GameManager.Instance.dialogueBoxController.Appear(dialogueStringA, characterName, this, sceneChange, repeat);
+                GameManager.Instance.dialogueBoxController.Appear(dialogueStringA, characterName, this, sceneChange, nextScene, repeat);
                 // Se desactiva la interaccion (?)
                 sleeping = true;
             }

@@ -55,23 +55,68 @@ public class PlatformerPlayer : PhysicsObject
     public int health;
     public int maxHealth;
 
+    [Header ("Isometric References")]
+    public bool Isometric = false;
+    public Rigidbody2D body;
+    public SpriteRenderer spriteRenderer;
+    public List<Sprite> neSprites;
+    public List<Sprite> nwSprites;
+    public List<Sprite> eSprites;
+    public List<Sprite> wSprites;
+
+    public float walkSpeed;
+    public float frameRate;
+
+    float idleTime;
+
+    Vector2 direction;
 
     void Start()
     {
         Cursor.visible = false;
         health = maxHealth;
-        animatorFunctions = GetComponent<AnimatorFunctions>();
         origLocalScale = transform.localScale;
         recoveryCounter = GetComponent<RecoveryCounter>();
         
         //Find all sprites so we can hide them when the player dies.
         graphicSprites = GetComponentsInChildren<SpriteRenderer>();
+        if (!Isometric){
+            animatorFunctions = GetComponent<AnimatorFunctions>();
+        }
+        
 
     }
 
     private void Update()
     {
-        ComputeVelocity();
+
+        if (Isometric){
+            direction = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical")).normalized;
+            body.velocity = direction * walkSpeed;
+            HandleSpriteFlip();
+            List<Sprite> directionSprites = GetSpriteDirection();
+            if (directionSprites != null){
+                float playTime = Time.time - idleTime;
+                int totalFrames = (int)(playTime * frameRate);
+                int frame = totalFrames % directionSprites.Count;
+                spriteRenderer.sprite = directionSprites[frame];
+            } 
+            else 
+            {
+                idleTime = Time.time;
+            }
+
+            if (Input.GetButtonDown("Cancel"))
+            {
+                pauseMenu.SetActive(true);
+            }
+        }
+
+        else
+        {
+            ComputeVelocity();
+        }
+
     }
 
     protected void ComputeVelocity()
@@ -133,7 +178,6 @@ public class PlatformerPlayer : PhysicsObject
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
             animator.SetFloat("velocityY", velocity.y);
             animator.SetInteger("moveDirection", (int)Input.GetAxis("HorizontalDirection"));
-            animator.SetBool("hasChair", GameManager.Instance.inventory.ContainsKey("chair"));
             targetVelocity = move * maxSpeed;
 
         }
@@ -148,7 +192,7 @@ public class PlatformerPlayer : PhysicsObject
     public void Freeze(bool freeze)
     {
         //Set all animator params to ensure the player stops running, jumping, etc and simply stands
-        if (freeze)
+        if (freeze && !Isometric)
         {
             animator.SetInteger("moveDirection", 0);
             animator.SetBool("grounded", true);
@@ -262,5 +306,56 @@ public class PlatformerPlayer : PhysicsObject
         Freeze(hide);
         foreach (SpriteRenderer sprite in graphicSprites)
             sprite.gameObject.SetActive(!hide);
+    }
+
+
+
+    // ISOMETRIC FUNCTIONS
+
+    void HandleSpriteFlip() {
+        if(!spriteRenderer.flipX && direction.x > 0){
+            spriteRenderer.flipX = true;
+        } else if(spriteRenderer.flipX && direction.x < 0){
+            spriteRenderer.flipX = false;
+        }
+    }
+
+    List<Sprite> GetSpriteDirection() {
+
+        List<Sprite> selectedSprites = null;
+
+        if(direction.y > 0){
+            if(Mathf.Abs(direction.x) < 0)
+            {
+                selectedSprites = neSprites;
+            }
+            else
+            {
+                selectedSprites = nwSprites;
+            }
+        }
+        else if (direction.y < 0)
+        {
+            if (Mathf.Abs(direction.x) < 0)
+            {
+                selectedSprites = eSprites;
+            } 
+            else 
+            {
+                selectedSprites = wSprites;
+            }
+        }
+        else{
+            if(Mathf.Abs(direction.x) < 0)
+            {
+                selectedSprites = eSprites;
+            }
+            else
+            {
+                selectedSprites = wSprites;
+            }
+        }
+
+        return selectedSprites;
     }
 }

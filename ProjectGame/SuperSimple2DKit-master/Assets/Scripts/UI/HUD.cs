@@ -24,9 +24,13 @@ public class HUD : MonoBehaviour
     [System.NonSerialized] public string loadSceneName;
     [System.NonSerialized] public bool resetPlayer;
 
+
+
+
     void Start()
     {
         //Set all bar widths to 1, and also the smooth variables.
+
         healthBarWidth = 1;
         healthBarWidthEased = healthBarWidth;
         bugs = (float)PlatformerPlayer.Instance.bugs;

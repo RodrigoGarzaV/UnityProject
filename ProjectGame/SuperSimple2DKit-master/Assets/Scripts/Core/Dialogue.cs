@@ -73,7 +73,7 @@ public class Dialogue : MonoBehaviour
         });
 
         dialogue.Add("BugText", new string[] {
-            "There's a bug in the system.",
+            "There's a bug in the system",
             "Attempt to fix?",
             "Loading..."
         });
@@ -88,6 +88,24 @@ public class Dialogue : MonoBehaviour
             "Yes"
         });
 
+        dialogue.Add("ComputerText", new string[] {
+            "Los jugadores necesitan tu ayuda.",
+            "Tendras que entrar al sistema y eliminar todos los bugs.",
+            "Entrar al mundo virtual?",
+            "Cargando..."
+        });
+
+        dialogue.Add("ComputerTextChoice1", new string[] {
+            "",
+            "",
+            "Luego"
+        });
+
+        dialogue.Add("ComputerTextChoice2", new string[] {
+            "",
+            "",
+            "Si"
+        });
 
 
 

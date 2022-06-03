@@ -7,7 +7,7 @@ using UnityEngine;
 public class Collectable : MonoBehaviour
 {
 
-    enum ItemType { InventoryItem, Coin, Health, Ammo }; //Creates an ItemType category
+    enum ItemType { InventoryItem, Bug, Health }; //Creates an ItemType category
     [SerializeField] ItemType itemType; //Allows us to select what type of item the gameObject is in the inspector
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip bounceSound;
@@ -23,7 +23,7 @@ public class Collectable : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject == NewPlayer.Instance.gameObject)
+        if (col.gameObject == PlatformerPlayer.Instance.gameObject)
         {
             Collect();
         }
@@ -44,30 +44,21 @@ public class Collectable : MonoBehaviour
                 GameManager.Instance.GetInventoryItem(itemName, UIImage);
             }
         }
-        else if (itemType == ItemType.Coin)
+        else if (itemType == ItemType.Bug)
         {
-            NewPlayer.Instance.coins += itemAmount;
+            PlatformerPlayer.Instance.bugs += itemAmount;
         }
         else if (itemType == ItemType.Health)
         {
-            if (NewPlayer.Instance.health < NewPlayer.Instance.maxHealth)
+            if (PlatformerPlayer.Instance.health < PlatformerPlayer.Instance.maxHealth)
             {
                 GameManager.Instance.hud.HealthBarHurt();
-                NewPlayer.Instance.health += itemAmount;
+                PlatformerPlayer.Instance.health += itemAmount;
             }
         }
-        else if (itemType == ItemType.Ammo)
-        {
-            if (NewPlayer.Instance.ammo < NewPlayer.Instance.maxAmmo)
-            {
-                GameManager.Instance.hud.HealthBarHurt();
-                NewPlayer.Instance.ammo += itemAmount;
-            }
-        }
-
+        
         GameManager.Instance.audioSource.PlayOneShot(collectSounds[Random.Range(0, collectSounds.Length)], Random.Range(.6f, 1f));
 
-        NewPlayer.Instance.FlashEffect();
 
 
         //If my parent has an Ejector script, it means that my parent is actually what needs to be destroyed, along with me, once collected

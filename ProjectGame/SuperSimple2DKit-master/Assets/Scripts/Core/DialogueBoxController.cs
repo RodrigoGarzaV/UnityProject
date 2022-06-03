@@ -23,7 +23,6 @@ public class DialogueBoxController : MonoBehaviour
     [Header("Other")]
     private bool ableToAdvance;
     private bool activated;
-    [SerializeField] private float typeSpeed = 1f;
     private int choiceLocation;
     private int cPos = 0;
     private string[] characterDiologue;
@@ -38,6 +37,7 @@ public class DialogueBoxController : MonoBehaviour
     private bool typing = true;
     private bool sceneChange;
     private bool dialogueNextScene;
+    private string nextScene;
 
 
     // Update is called once per frame
@@ -109,10 +109,11 @@ public class DialogueBoxController : MonoBehaviour
     }
 
     // Llama el dialogo inicial
-    public void Appear(string fName, string characterName, DialogueTrigger dTrigger, bool sChange, bool r)
+    public void Appear(string fName, string characterName, DialogueTrigger dTrigger, bool sChange, string nScene, bool r)
     {
         repeat = r;
         sceneChange = sChange;
+        nextScene = nScene;
         dialogueTrigger = dTrigger;
         choice1Mesh.text = "";
         choice2Mesh.text = "";
