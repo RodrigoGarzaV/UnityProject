@@ -81,10 +81,11 @@ MonoBehaviour:
   completed: 0
   repeat: 1
   sleeping: 0
-  sceneChange: 0
+  sceneChange: 1
   characterName: Bug
   dialogueStringA: BugText
   dialogueStringB: 
+  nextScene: 
   audioLinesA: []
   audioLinesB: []
   audioChoices: []
@@ -121,7 +122,7 @@ MonoBehaviour:
   health: 1
   instantiator: {fileID: 0}
   hitSound: {fileID: 0}
-  recoveryCounter: {fileID: 0}
+  recoveryCounter: {fileID: -3654240034444500211}
   requireDownAttack: 0
 --- !u!1 &2268473831351357328
 GameObject:
