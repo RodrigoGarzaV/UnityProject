@@ -3166,7 +3166,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 892803976}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &444362193
+--- !u!114 &444362198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3175,9 +3175,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 444362187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77e6eb730b88b4c2da7e3ff66bd8e68a, type: 3}
+  m_Script: {fileID: 11500000, guid: 48b7bdd53ddd944cbaa443c1e2d65404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressSound: {fileID: 0}
+  openSound: {fileID: 0}
+  Questions: {fileID: 0}
 --- !u!1001 &450432895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5617,12 +5620,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1994994548094198, guid: 99780bb7fe7f24c7bb013cee484155dc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 223928763964167898, guid: 99780bb7fe7f24c7bb013cee484155dc,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 0
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 224908452087460466, guid: 99780bb7fe7f24c7bb013cee484155dc,
         type: 3}
@@ -5728,6 +5731,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 702794149157388178, guid: 99780bb7fe7f24c7bb013cee484155dc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 444362198}
+    - target: {fileID: 702794149157388178, guid: 99780bb7fe7f24c7bb013cee484155dc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 702794149157388178, guid: 99780bb7fe7f24c7bb013cee484155dc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Regresar
+      objectReference: {fileID: 0}
+    - target: {fileID: 702794149157388178, guid: 99780bb7fe7f24c7bb013cee484155dc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: QuestionsPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627323163731072799, guid: 99780bb7fe7f24c7bb013cee484155dc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 444362198}
+    - target: {fileID: 7627323163731072799, guid: 99780bb7fe7f24c7bb013cee484155dc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Enviar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627323163731072799, guid: 99780bb7fe7f24c7bb013cee484155dc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: QuestionsPanel, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1737326284876762550, guid: 99780bb7fe7f24c7bb013cee484155dc, type: 3}

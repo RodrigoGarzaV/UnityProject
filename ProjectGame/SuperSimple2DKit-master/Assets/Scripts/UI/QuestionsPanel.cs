@@ -17,12 +17,14 @@ public class QuestionsPanel : MonoBehaviour
 
     public void Enviar()
     {
+        Cursor.visible = false;
         Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 
     public void Regresar()
     {
+        Cursor.visible = false;
         Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
