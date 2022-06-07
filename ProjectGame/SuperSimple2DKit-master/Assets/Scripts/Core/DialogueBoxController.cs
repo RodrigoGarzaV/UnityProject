@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /*Controls the dialogue box and it's communication with Dialogue.cs, which contains the character dialogue*/
 
@@ -41,6 +42,11 @@ public class DialogueBoxController : MonoBehaviour
     private Scene Scene1;
     private Scene Scene2;
     private Scene currentScene;
+
+
+
+
+    [SerializeField] GameObject Questions;
 
     void Start(){
 
@@ -187,7 +193,8 @@ public class DialogueBoxController : MonoBehaviour
                 SceneManager.LoadScene("VirtualWorld");
             }
             else{
-                SceneManager.LoadScene("ClickandDrag");
+                // SceneManager.LoadScene("ClickandDrag");
+                Questions.SetActive(true);
             }
             
         }
