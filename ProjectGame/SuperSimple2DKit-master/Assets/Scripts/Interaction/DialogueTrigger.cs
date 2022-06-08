@@ -65,20 +65,20 @@ public class DialogueTrigger : MonoBehaviour
                 // Se desactiva icon
                 iconAnimator.SetBool("active", false);
 
-                // funcion de presentacion lol
-                if (currentScene == Scene1){
-                SceneManager.LoadScene("VirtualWorld");
-                }
+                // // funcion de presentacion lol
+                // if (currentScene == Scene1){
+                // SceneManager.LoadScene("VirtualWorld");
+                // }
 
-                GameManager.Instance.dialogueBoxController.Appear(dialogueStringA, characterName, this, sceneChange, repeat);
-                // Se desactiva la interaccion (?)
-                sleeping = true;
+                // GameManager.Instance.dialogueBoxController.Appear(dialogueStringA, characterName, this, sceneChange, repeat);
+                // // Se desactiva la interaccion (?)
+                // sleeping = true;
             }
         }
-        else
-        {
-            iconAnimator.SetBool("active", false);
-        }
+        // else
+        // {
+        //     iconAnimator.SetBool("active", false);
+        // }
     }
 
     void OnTriggerExit2D(Collider2D col)
