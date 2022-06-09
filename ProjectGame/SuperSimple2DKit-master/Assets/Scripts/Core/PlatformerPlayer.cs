@@ -20,6 +20,7 @@ public class PlatformerPlayer : PhysicsObject
     [SerializeField] private Component[] graphicSprites;
     [SerializeField] private ParticleSystem jumpParticles;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject questionsMenu;
     public RecoveryCounter recoveryCounter;
 
     // Singleton instantiation
@@ -110,6 +111,11 @@ public class PlatformerPlayer : PhysicsObject
             {
                 pauseMenu.SetActive(true);
             }
+
+            if (Input.GetButtonDown("Questions"))
+            {
+                questionsMenu.SetActive(true);
+            }
         }
 
         else
@@ -131,6 +137,11 @@ public class PlatformerPlayer : PhysicsObject
         if (Input.GetButtonDown("Cancel"))
         {
             pauseMenu.SetActive(true);
+        }
+
+        if (Input.GetButtonDown("Questions"))
+        {
+            questionsMenu.SetActive(true);
         }
 
         //Movement, jumping, and attacking!

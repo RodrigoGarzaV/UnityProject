@@ -28,4 +28,11 @@ public class QuestionsPanel : MonoBehaviour
         Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
+
+    public void Unpause()
+    {
+        Cursor.visible = false;
+        gameObject.SetActive(false);
+        Time.timeScale = 1f;
+    }
 }

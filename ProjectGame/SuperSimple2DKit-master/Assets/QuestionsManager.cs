@@ -18,4 +18,8 @@ public class QuestionsManager : MonoBehaviour
             // questionsMenu.gameObject.SetActive(true);
         }
     }
+
+    public void Send(){
+        questionsMenu.gameObject.SetActive(!questionsMenu.gameObject.activeSelf); 
+    }
 }
