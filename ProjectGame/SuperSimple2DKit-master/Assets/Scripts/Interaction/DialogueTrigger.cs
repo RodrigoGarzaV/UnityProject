@@ -46,7 +46,7 @@ public class DialogueTrigger : MonoBehaviour
     void Start(){
 
         Scene1 = SceneManager.GetSceneByName("Juego");
-        Scene2 = SceneManager.GetSceneByName("VirtualWorld");
+        Scene2 = SceneManager.GetSceneByName("Perfiles");
         currentScene = SceneManager.GetActiveScene();
 
     }
@@ -67,7 +67,7 @@ public class DialogueTrigger : MonoBehaviour
 
                 // funcion de presentacion lol
                 if (currentScene == Scene1){
-                SceneManager.LoadScene("VirtualWorld");
+                SceneManager.LoadScene("Perfiles");
                 }
 
                 GameManager.Instance.dialogueBoxController.Appear(dialogueStringA, characterName, this, sceneChange, repeat);

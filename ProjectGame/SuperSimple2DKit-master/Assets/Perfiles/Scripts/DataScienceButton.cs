@@ -8,6 +8,6 @@ public class DataScienceButton : MonoBehaviour
     // Start is called before the first frame update
     public void DataScience()
     {
-        SceneManager.LoadScene("DataScience");
+        SceneManager.LoadScene("VirtualWorld");
     }
 }
