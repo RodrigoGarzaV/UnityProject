@@ -11,7 +11,7 @@ public class QuestionsManager : MonoBehaviour
     }
 
     void Update(){
-        if(Input.GetKeyDown(KeyCode.E)){
+        if(Input.GetKeyDown(KeyCode.Q)){
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             questionsMenu.gameObject.SetActive(!questionsMenu.gameObject.activeSelf);
