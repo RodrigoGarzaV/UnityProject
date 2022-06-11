@@ -15,26 +15,33 @@ public class QuestionsPanel : MonoBehaviour
     [SerializeField] AudioClip openSound;
     [SerializeField] GameObject Questions;
 
+    /*
     public TextMeshProUGUI pregunta1;
     public TextMeshProUGUI respuesta1;
     public TextMeshProUGUI respuesta2;
     public TextMeshProUGUI respuesta3;
     public TextMeshProUGUI respuesta4;
-
-    /*public Button respuesta1;
+    */
+   
+    public TextMeshProUGUI pregunta1;
+    public Button respuesta1;
     public Button respuesta2;
     public Button respuesta3;
-    public Button respuesta4;*/
+    public Button respuesta4;
     //public List<string> opciones;
     //public List<Button> textOptions;
    private string  baseURL = "https://localhost:5001/api/preguntas/DataScience?";
-    /*void Start()
+
+    void OnEnable()
     {
+        Cursor.visible = true;
+        Time.timeScale = 0f;
+
         int randomID = UnityEngine.Random.Range(0, 19);
-
+        
         StartCoroutine(GetAPI(randomID, ResponseCallback));
-    }*/
-
+    }
+    
     IEnumerator GetAPI(int APIIndex, Action<string> callback = null)
     {
         string  apiURL = baseURL + "idUnity=" + APIIndex.ToString();
@@ -54,7 +61,6 @@ public class QuestionsPanel : MonoBehaviour
         }
 
         //string Answer = data["answer"];
-
         //pregunta1.text = Answer;
     }
 
@@ -91,7 +97,6 @@ public class QuestionsPanel : MonoBehaviour
         textOptions.Add(respuesta2);
         textOptions.Add(respuesta3);
         textOptions.Add(respuesta4);
-
         
         for(int i = 0; i < 4; i++)
         {
@@ -99,28 +104,25 @@ public class QuestionsPanel : MonoBehaviour
             textOptions[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = opciones[index];
             if(opciones[index] == dataAPI.answer)
             {
+                Debug.Log(opciones[index]);
+                Debug.Log(dataAPI.answer);
                 textOptions[i].GetComponent<Respuestas>().correcta = true;
             }
             opciones.RemoveAt(index);
-
         }*/
 
-        respuesta1.text = dataAPI.answer;
-        respuesta2.text = dataAPI.option1;
-        respuesta3.text = dataAPI.option2;
-        respuesta4.text = dataAPI.option3;
-        
+        respuesta1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = dataAPI.answer;
+        respuesta2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = dataAPI.option1;
+        respuesta3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = dataAPI.option2;
+        respuesta4.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = dataAPI.option3;
+
+        if(respuesta1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text  == dataAPI.answer)
+        {
+            GetComponent<Respuestas>().correcta = true;
+        }
     }
     
-    void OnEnable()
-    {
-        Cursor.visible = true;
-        Time.timeScale = 0f;
-
-        int randomID = UnityEngine.Random.Range(0, 19);
-        
-        StartCoroutine(GetAPI(randomID, ResponseCallback));
-    }
+    
 
     public void Enviar()
     {
