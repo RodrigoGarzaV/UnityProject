@@ -116,9 +116,15 @@ public class QuestionsPanel : MonoBehaviour
         respuesta3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = dataAPI.option2;
         respuesta4.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = dataAPI.option3;
 
-        if(respuesta1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text  == dataAPI.answer)
+        string ayuda1 = respuesta1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
+
+        if(ayuda1.CompareTo(dataAPI.answer) == 0)
         {
-            GetComponent<Respuestas>().correcta = true;
+            Debug.Log("casi");
+        } 
+        else 
+        {
+            Debug.Log("No");
         }
     }
     
