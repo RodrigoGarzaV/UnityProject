@@ -2496,6 +2496,11 @@ PrefabInstance:
       propertyPath: m_VerticalAlignment
       value: 512
       objectReference: {fileID: 0}
+    - target: {fileID: 4935099364102201463, guid: b022250573709434c9737ce47e1017e3,
+        type: 3}
+      propertyPath: m_text
+      value: / 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5433378788908979453, guid: b022250573709434c9737ce47e1017e3,
         type: 3}
       propertyPath: gameMusic

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2268473830484376704}
   - component: {fileID: -3654240034444500211}
   - component: {fileID: -1503996860232083923}
+  - component: {fileID: 3711212417383297492}
   m_Layer: 0
   m_Name: Bug
   m_TagString: Untagged
@@ -124,6 +125,25 @@ MonoBehaviour:
   hitSound: {fileID: 0}
   recoveryCounter: {fileID: -3654240034444500211}
   requireDownAttack: 0
+--- !u!114 &3711212417383297492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2268473830484376718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08d405962f67e496a84ebd5037ff219c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 1
+  audioSource: {fileID: 0}
+  bounceSound: {fileID: 0}
+  collectSounds: []
+  itemAmount: 1
+  itemName: 
+  UIImage: {fileID: 0}
 --- !u!1 &2268473831351357328
 GameObject:
   m_ObjectHideFlags: 0
