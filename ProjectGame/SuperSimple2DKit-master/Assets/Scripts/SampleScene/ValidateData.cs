@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
-//using SimpleJSON;
 using UnityEngine.Networking;
+using SimpleJSON;
+using UnityEngine.UI;
+using TMPro;
+using Newtonsoft.Json;
+using System.Text;
+using System;
 
 public class ValidateData : MonoBehaviour
 {
@@ -14,46 +17,87 @@ public class ValidateData : MonoBehaviour
 
     //public TMP_Text name;
 
-    private string APILogin = "https://localhost:5001/api/login?";
+    private string APILogin = "https://localhost:5001/api/APIMySQLController/";
 
 
     private void Start() {
         Message.text = "";
-        //name.text = PlayerPrefs.GetString("nameInput");
+       
     }
-    
-    public void SubmitLogin()
-    {   
-        // string emailIndex = emailInput.text;
-        // Aplicante _aplicante = APIHelper.GetNewName(emailIndex);
-        // int idUser = _aplicante.idAplicante;
 
-        // Debug.Log(idUser);
+     public void SubmitLogin()
+     {
+        string emailIndex = emailInput.text;
+        StartCoroutine(GetAPI(emailIndex));
+     }
 
-        if (nameInput.text == "" || emailInput.text == "" )
+
+     IEnumerator GetAPI(string _email)
+    {
+        string  apiURL = APILogin + _email;
+        Debug.Log(apiURL);
+        UnityWebRequest apiRequest = UnityWebRequest.Get(apiURL);
+
+        yield return apiRequest.SendWebRequest();
+
+        if (apiRequest.isNetworkError || apiRequest.isHttpError)
         {
-            Message.text = "Please fill all fields ";
-            return;
+            Debug.LogError(apiRequest.error);
+            yield break;
         }
 
-        Debug.Log(nameInput.text);
-        Debug.Log(emailInput.text);
+        JSONNode apiInfo = JSON.Parse(apiRequest.downloadHandler.text);
         
-        
-        APILogin = APILogin + "nombreUnity=" + nameInput.text + "&correoUnity=" + emailInput.text;
-        UnityWebRequest API = UnityWebRequest.Get(APILogin);
+        int idUser = apiInfo["idAplicante"];
+        Debug.LogError(idUser);
 
-       //yield return API.SendWebRequest();
-        
-        if( API.isHttpError){
-            Message.text = ":(";
-            return;
-        } else {
-            Message.text = "se logró";
-            
-            return;
-        }
+        //ScoreAplicante.idAplicante = idUser;
+
     }
+
+
+
+
+
+
+
+
+
+
+
+    
+    // public void SubmitLogin()
+    // {   
+    //     // string emailIndex = emailInput.text;
+    //     // Aplicante _aplicante = APIHelper.GetNewName(emailIndex);
+    //     // int idUser = _aplicante.idAplicante;
+
+    //     // Debug.Log(idUser);
+
+    //     if (nameInput.text == "" || emailInput.text == "" )
+    //     {
+    //         Message.text = "Please fill all fields ";
+    //         return;
+    //     }
+
+    //     Debug.Log(nameInput.text);
+    //     Debug.Log(emailInput.text);
+        
+        
+    //     APILogin = APILogin + "nombreUnity=" + nameInput.text + "&correoUnity=" + emailInput.text;
+    //     UnityWebRequest API = UnityWebRequest.Get(APILogin);
+
+    //    //yield return API.SendWebRequest();
+        
+    //     if( API.isHttpError){
+    //         Message.text = ":(";
+    //         return;
+    //     } else {
+    //         Message.text = "se logró";
+            
+    //         return;
+    //     }
+    // }
 
     
       // https://www.codegrepper.com/code-examples/csharp/unitywebrequest+example
