@@ -9,19 +9,19 @@ using Newtonsoft.Json;
 using System.Text;
 using System;
 
-public class QuestionsPanel : MonoBehaviour
+/*public class QuestionsPanel : MonoBehaviour
 {
     [SerializeField] AudioClip pressSound;
     [SerializeField] AudioClip openSound;
     [SerializeField] GameObject Questions;
 
-    /*
+
     public TextMeshProUGUI pregunta1;
     public TextMeshProUGUI respuesta1;
     public TextMeshProUGUI respuesta2;
     public TextMeshProUGUI respuesta3;
     public TextMeshProUGUI respuesta4;
-    */
+
    
     public TextMeshProUGUI pregunta1;
     public Button respuesta1;
@@ -109,7 +109,7 @@ public class QuestionsPanel : MonoBehaviour
                 textOptions[i].GetComponent<Respuestas>().correcta = true;
             }
             opciones.RemoveAt(index);
-        }*/
+        }
 
         respuesta1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = dataAPI.answer;
         respuesta2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = dataAPI.option1;
@@ -169,3 +169,73 @@ public class QuestionsPanel : MonoBehaviour
         POST = 1,
         PUT = 2
     } 
+*/
+
+public class QuestionsPanel : MonoBehaviour
+{
+    [SerializeField] AudioClip pressSound;
+    [SerializeField] AudioClip openSound;
+    [SerializeField] GameObject Questions;  
+   
+    public TextMeshProUGUI pregunta1;
+    public TextMeshProUGUI respuesta1;
+    public TextMeshProUGUI respuesta2;
+    public TextMeshProUGUI respuesta3;
+    public TextMeshProUGUI respuesta4;
+    
+   private string  baseURL = "https://localhost:5001/api/preguntas/DataScience?";
+
+    void OnEnable()
+    {
+        Cursor.visible = true;
+        Time.timeScale = 0f;
+
+        int randomID = UnityEngine.Random.Range(0, 19);
+        
+        StartCoroutine(GetAPI(randomID));
+    }
+    
+    IEnumerator GetAPI(int APIIndex)
+    {
+        string  apiURL = baseURL + "idUnity=" + APIIndex.ToString();
+        Debug.Log(apiURL);
+        UnityWebRequest apiRequest = UnityWebRequest.Get(apiURL);
+
+        yield return apiRequest.SendWebRequest();
+
+        if (apiRequest.isNetworkError || apiRequest.isHttpError)
+        {
+            Debug.LogError(apiRequest.error);
+            yield break;
+        }
+
+        JSONNode apiInfo = JSON.Parse(apiRequest.downloadHandler.text);
+        
+        pregunta1.text = apiInfo["answer"];
+        respuesta1.text = apiInfo["answer"];
+        respuesta2.text = apiInfo["option1"];
+        respuesta3.text = apiInfo["option2"];
+        respuesta4.text = apiInfo["option3"];
+    }
+
+    public void Enviar()
+    {
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+        gameObject.SetActive(false);
+    }
+
+    public void Regresar()
+    {
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+        gameObject.SetActive(false);
+    }
+
+    public void Unpause()
+    {
+        Cursor.visible = false;
+        gameObject.SetActive(false);
+        Time.timeScale = 1f;
+    }
+}
