@@ -51,7 +51,7 @@ public class ValidateData : MonoBehaviour
         int idUser = apiInfo["idAplicante"];
         Debug.LogError(idUser);
 
-        ScoreAplicante.idAplicante = idUser;
+        //ScoreAplicante.idAplicante = idUser;
 
     }
 
