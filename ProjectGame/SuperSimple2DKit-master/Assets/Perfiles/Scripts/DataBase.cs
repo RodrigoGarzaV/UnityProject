@@ -11,6 +11,10 @@ public class DataBase : MonoBehaviour
     public TextMeshProUGUI Puntaje;
     private string Id = "8";
     private string APIScore = "https://localhost:5001/api/entrevista?";
+
+    int helper = contador.preCorrectas;
+
+    //Puntaje.SetText (helper.ToString);
     void Start()
     {
         StartCoroutine(PostAPI());
