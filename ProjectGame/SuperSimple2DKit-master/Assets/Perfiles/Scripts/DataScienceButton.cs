@@ -13,6 +13,8 @@ public class DataScienceButton : MonoBehaviour
     }
     public void Menu()
     {
+        contador.preCorrectas = 0;
+        contador.numPreguntas = 0;
         SceneManager.LoadScene("Menu");
     }
 
