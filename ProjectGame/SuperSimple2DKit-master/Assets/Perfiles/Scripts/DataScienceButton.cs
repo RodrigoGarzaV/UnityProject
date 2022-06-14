@@ -6,8 +6,14 @@ using UnityEngine.SceneManagement;
 public class DataScienceButton : MonoBehaviour
 {
     // Start is called before the first frame update
-    public void DataScience()
+    public void Menu()
     {
-        SceneManager.LoadScene("VirtualWorld");
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("QUIT");
+        Application.Quit();
     }
 }
