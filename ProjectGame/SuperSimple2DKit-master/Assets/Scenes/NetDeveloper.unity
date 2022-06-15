@@ -5163,11 +5163,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4569125025086690, guid: 927e473a2ba484d75b382fc1faaf0eeb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -57.55
+      value: -55.005573
       objectReference: {fileID: 0}
     - target: {fileID: 4569125025086690, guid: 927e473a2ba484d75b382fc1faaf0eeb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5294998
+      value: 1.5732524
       objectReference: {fileID: 0}
     - target: {fileID: 4569125025086690, guid: 927e473a2ba484d75b382fc1faaf0eeb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8348,17 +8348,17 @@ PrefabInstance:
     - target: {fileID: 114278952574089158, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114278952574089158, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_ReferenceResolution.x
-      value: 800
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 114278952574089158, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_ReferenceResolution.y
-      value: 600
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 224908452087460466, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
@@ -8489,7 +8489,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1751054520}
     - target: {fileID: 449462592954768096, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -8508,7 +8508,7 @@ PrefabInstance:
     - target: {fileID: 449462592954768096, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Regresar
+      value: Regresar2
       objectReference: {fileID: 0}
     - target: {fileID: 449462592954768096, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
@@ -8518,7 +8518,7 @@ PrefabInstance:
     - target: {fileID: 449462592954768096, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: QuestionsPanel, Assembly-CSharp
+      value: NetDeveloper, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 449462592954768096, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
@@ -8554,7 +8554,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1751054520}
     - target: {fileID: 3255466310634981165, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -8573,7 +8573,7 @@ PrefabInstance:
     - target: {fileID: 3255466310634981165, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Regresar
+      value: Regresar2
       objectReference: {fileID: 0}
     - target: {fileID: 3255466310634981165, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
@@ -8583,7 +8583,7 @@ PrefabInstance:
     - target: {fileID: 3255466310634981165, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: QuestionsPanel, Assembly-CSharp
+      value: NetDeveloper, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3255466310634981165, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
@@ -8619,7 +8619,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1751054520}
     - target: {fileID: 5653635096758306530, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -8638,7 +8638,7 @@ PrefabInstance:
     - target: {fileID: 5653635096758306530, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Regresar
+      value: Regresar2
       objectReference: {fileID: 0}
     - target: {fileID: 5653635096758306530, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
@@ -8648,7 +8648,7 @@ PrefabInstance:
     - target: {fileID: 5653635096758306530, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: QuestionsPanel, Assembly-CSharp
+      value: NetDeveloper, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5653635096758306530, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
@@ -8699,7 +8699,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1751054520}
     - target: {fileID: 6948770847228670008, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -8718,7 +8718,7 @@ PrefabInstance:
     - target: {fileID: 6948770847228670008, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Regresar
+      value: Regresar2
       objectReference: {fileID: 0}
     - target: {fileID: 6948770847228670008, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
@@ -8728,7 +8728,7 @@ PrefabInstance:
     - target: {fileID: 6948770847228670008, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: QuestionsPanel, Assembly-CSharp
+      value: NetDeveloper, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6948770847228670008, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
