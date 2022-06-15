@@ -11,7 +11,8 @@ public class DataBase : MonoBehaviour
     public TextMeshProUGUI score;
     private int Id = ValidateData.idUser;
     private int score2;
-    private string APIScore = "https://localhost:5001/api/entrevista?";
+    //private string APIScore = "https://localhost:5001/api/entrevista?";
+    private string APIScore = "https://localhost:44380/api/entrevista?";
 
     int helper = contador.preCorrectas;
 
