@@ -8,8 +8,9 @@ using TMPro;
 
 public class DataBase : MonoBehaviour
 {
-    public TextMeshProUGUI Puntaje;
-    private string Id = "8";
+    public TextMeshProUGUI score;
+    private int Id = ValidateData.idUser;
+    private int score2;
     private string APIScore = "https://localhost:5001/api/entrevista?";
 
     int helper = contador.preCorrectas;
@@ -17,6 +18,7 @@ public class DataBase : MonoBehaviour
     //Puntaje.SetText (helper.ToString);
     void Start()
     {
+        score.text = "" + (contador.preCorrectas*5) + "";
         StartCoroutine(PostAPI());
     }
 
@@ -25,7 +27,9 @@ public class DataBase : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("myField", "myData");
 
-        string  apiURL = APIScore + "scoreEntrevista=" + Puntaje.text + "&idUsuario=" + Id;
+        score2 = (contador.preCorrectas*5);
+
+        string  apiURL = APIScore + "scoreEntrevista=" + score2 + "&idUsuario=" + Id.ToString();
 
         UnityWebRequest InfoRequest = UnityWebRequest.Post(apiURL, form);
 

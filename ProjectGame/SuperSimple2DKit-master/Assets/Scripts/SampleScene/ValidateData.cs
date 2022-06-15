@@ -16,10 +16,12 @@ public class ValidateData : MonoBehaviour
     public TMP_InputField emailInput;
     public TextMeshProUGUI Message;
 
+    public static int idUser;
+
     //public TMP_Text name;
 
-    //private string APILogin = "https://localhost:5001/api/APIMySQLController/";
-    private string APILogin = "https://localhost:44380/api/APIMySQLController/";
+    private string APILogin = "https://localhost:5001/api/APIMySQLController/";
+    //private string APILogin = "https://localhost:44380/api/APIMySQLController/";
 
     private void Start() {
         Message.text = "";
@@ -49,7 +51,7 @@ public class ValidateData : MonoBehaviour
 
         JSONNode apiInfo = JSON.Parse(apiRequest.downloadHandler.text);
         
-        int idUser = apiInfo["idAplicante"];
+        idUser = apiInfo["idAplicante"];
         Debug.LogError(idUser);
 
         SceneManager.LoadScene("Menu");

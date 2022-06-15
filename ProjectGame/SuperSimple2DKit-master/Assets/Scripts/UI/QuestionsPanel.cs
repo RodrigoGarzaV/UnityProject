@@ -211,7 +211,7 @@ public class QuestionsPanel : MonoBehaviour
 
         JSONNode apiInfo = JSON.Parse(apiRequest.downloadHandler.text);
         
-        pregunta1.text = apiInfo["answer"];
+        pregunta1.text = apiInfo["question"];
         respuesta1.text = apiInfo["answer"];
         respuesta2.text = apiInfo["option1"];
         respuesta3.text = apiInfo["option2"];
