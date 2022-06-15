@@ -413,7 +413,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 531690854}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 147650425}
+        m_TargetAssemblyTypeName: DataScienceButton, Assembly-CSharp
+        m_MethodName: DataEngineering
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &531690854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,7 +765,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1121661265}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 147650425}
+        m_TargetAssemblyTypeName: DataScienceButton, Assembly-CSharp
+        m_MethodName: FrontEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1121661265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,7 +1272,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1422370216}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 147650425}
+        m_TargetAssemblyTypeName: DataScienceButton, Assembly-CSharp
+        m_MethodName: JavaDeveloper
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1422370216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1370,7 +1406,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1556029279}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 147650425}
+        m_TargetAssemblyTypeName: DataScienceButton, Assembly-CSharp
+        m_MethodName: QAAutomation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1556029279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1831,7 +1879,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1834396564}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 147650425}
+        m_TargetAssemblyTypeName: DataScienceButton, Assembly-CSharp
+        m_MethodName: NetDeveloper
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1834396564
 MonoBehaviour:
   m_ObjectHideFlags: 0

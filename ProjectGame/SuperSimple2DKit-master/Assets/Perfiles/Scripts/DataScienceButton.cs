@@ -11,6 +11,7 @@ public class DataScienceButton : MonoBehaviour
     {
         SceneManager.LoadScene("VirtualWorld");
     }
+
     public void Menu()
     {
         contador.preCorrectas = 0;
@@ -22,5 +23,29 @@ public class DataScienceButton : MonoBehaviour
     {
         Debug.Log("QUIT");
         Application.Quit();
+    }
+
+    public void DataEngineering()
+    {
+        SceneManager.LoadScene("DataEngineering");
+    }
+
+    public void FrontEnd()
+    {
+        SceneManager.LoadScene("FrontEnd");
+    }
+
+    public void JavaDeveloper()
+    {
+        SceneManager.LoadScene("JavaDeveloper");
+    }
+
+     public void NetDeveloper()
+    {
+        SceneManager.LoadScene("NetDeveloper");
+    }
+    public void QAAutomation()
+    {
+        SceneManager.LoadScene("QAAutomation");
     }
 }
