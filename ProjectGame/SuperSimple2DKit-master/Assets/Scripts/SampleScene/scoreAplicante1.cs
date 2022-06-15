@@ -8,10 +8,11 @@ public class scoreAplicante1 : MonoBehaviour
 {
     // Start is called before the first frame update
     
-    public int idAplicante;
+    //public int idUsuario = ValidateData.idUser;
     public TextMeshProUGUI score;
     void Start()
     {
+        //Debug.Log(ValidateData.idUser);
         score.text = "" + (contador.preCorrectas*5) + "";
     }
 }
