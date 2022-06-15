@@ -8,6 +8,7 @@ using TMPro;
 using Newtonsoft.Json;
 using System.Text;
 using System;
+using UnityEngine.SceneManagement;
 
 public class ValidateData : MonoBehaviour
 {
@@ -50,6 +51,8 @@ public class ValidateData : MonoBehaviour
         
         int idUser = apiInfo["idAplicante"];
         Debug.LogError(idUser);
+
+        SceneManager.LoadScene("Menu");
 
         //ScoreAplicante.idAplicante = idUser;
 
