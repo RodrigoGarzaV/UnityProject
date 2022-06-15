@@ -21,8 +21,8 @@ public class DataEngineering : MonoBehaviour
     public TextMeshProUGUI respuesta3;
     public TextMeshProUGUI respuesta4;
     
-   private string  baseURL = "https://localhost:5001/api/preguntas/DataEngineering?";
-
+    //private string  baseURL = "https://localhost:5001/api/preguntas/DataEngineering?";
+    private string  baseURL = "https://localhost:44380/api/preguntas/DataEngineering?";
     void OnEnable()
     {
         Cursor.visible = true;

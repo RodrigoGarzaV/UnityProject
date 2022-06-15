@@ -21,8 +21,8 @@ public class FrontEnd : MonoBehaviour
     public TextMeshProUGUI respuesta3;
     public TextMeshProUGUI respuesta4;
     
-   private string  baseURL = "https://localhost:5001/api/preguntas/FrontEnd?";
-
+    //private string  baseURL = "https://localhost:5001/api/preguntas/FrontEnd?";
+    private string  baseURL = "https://localhost:44380/api/preguntas/FrontEnd?";
     void OnEnable()
     {
         Cursor.visible = true;
