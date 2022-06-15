@@ -21,8 +21,8 @@ public class NetDeveloper : MonoBehaviour
     public TextMeshProUGUI respuesta3;
     public TextMeshProUGUI respuesta4;
     
-   //private string  baseURL = "https://localhost:5001/api/preguntas/NetDeveloper?";
-   private string  baseURL = "https://localhost:44380/api/preguntas/NetDeveloper?";
+   private string  baseURL = "https://localhost:5001/api/preguntas/NetDeveloper?";
+   //private string  baseURL = "https://localhost:44380/api/preguntas/NetDeveloper?";
 
 
     void OnEnable()

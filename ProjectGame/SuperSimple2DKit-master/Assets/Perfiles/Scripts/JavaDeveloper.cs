@@ -21,8 +21,8 @@ public class JavaDeveloper : MonoBehaviour
     public TextMeshProUGUI respuesta3;
     public TextMeshProUGUI respuesta4;
     
-   //private string  baseURL = "https://localhost:5001/api/preguntas/JavaDeveloper?";
-   private string  baseURL = "https://localhost:44380/api/preguntas/JavaDeveloper?";
+   private string  baseURL = "https://localhost:5001/api/preguntas/JavaDeveloper?";
+   //private string  baseURL = "https://localhost:44380/api/preguntas/JavaDeveloper?";
 
     void OnEnable()
     {

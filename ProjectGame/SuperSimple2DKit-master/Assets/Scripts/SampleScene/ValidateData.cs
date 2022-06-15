@@ -20,8 +20,8 @@ public class ValidateData : MonoBehaviour
 
     //public TMP_Text name;
 
-    //private string APILogin = "https://localhost:5001/api/APIMySQLController/";
-    private string APILogin = "https://localhost:44380/api/APIMySQLController/";
+    private string APILogin = "https://localhost:5001/api/APIMySQLController/";
+    //private string APILogin = "https://localhost:44380/api/APIMySQLController/";
 
     private void Start() {
         Message.text = "";

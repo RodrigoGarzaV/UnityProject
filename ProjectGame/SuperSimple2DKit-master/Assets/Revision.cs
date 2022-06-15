@@ -10,13 +10,13 @@ public class Revision : MonoBehaviour
     public void correctAnswer(){
         contador.preCorrectas++;
         contador.numPreguntas++;
-        if(contador.numPreguntas == 20){
+        if(contador.numPreguntas == 5){
             SceneManager.LoadScene("End");
         }
     }
     public void wrongAnswer(){
         contador.numPreguntas++;
-        if(contador.numPreguntas == 20){
+        if(contador.numPreguntas == 5){
             SceneManager.LoadScene("End");
         }
     }

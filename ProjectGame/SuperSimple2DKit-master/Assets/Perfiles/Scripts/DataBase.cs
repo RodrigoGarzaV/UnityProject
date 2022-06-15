@@ -11,15 +11,15 @@ public class DataBase : MonoBehaviour
     public TextMeshProUGUI score;
     private int Id = ValidateData.idUser;
     private int score2;
-    //private string APIScore = "https://localhost:5001/api/entrevista?";
-    private string APIScore = "https://localhost:44380/api/entrevista?";
+    private string APIScore = "https://localhost:5001/api/entrevista?";
+    //private string APIScore = "https://localhost:44380/api/entrevista?";
 
     int helper = contador.preCorrectas;
 
     //Puntaje.SetText (helper.ToString);
     void Start()
     {
-        score.text = "" + (contador.preCorrectas*5) + "";
+        score.text = "" + (contador.preCorrectas*20) + "";
         StartCoroutine(PostAPI());
     }
 
@@ -28,7 +28,7 @@ public class DataBase : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("myField", "myData");
 
-        score2 = (contador.preCorrectas*5);
+        score2 = (contador.preCorrectas*20);
 
         string  apiURL = APIScore + "scoreEntrevista=" + score2 + "&idUsuario=" + Id.ToString();
 
