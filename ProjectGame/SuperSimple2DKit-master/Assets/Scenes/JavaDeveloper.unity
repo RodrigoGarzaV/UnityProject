@@ -8347,6 +8347,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114278952574089158, guid: e2e9e4220531f4cb097ac1a0526ab084,
         type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114278952574089158, guid: e2e9e4220531f4cb097ac1a0526ab084,
+        type: 3}
       propertyPath: m_ReferenceResolution.x
       value: 800
       objectReference: {fileID: 0}
